@@ -1,0 +1,35 @@
+@use './variables' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $rubik-font;
+}
+
+p, a {
+    font-size: $paragraph-size;
+    font-weight: $sm-weight;
+    line-height: 1.6;
+    color: $navy-200;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.light {
+    font-weight: $big-weight;
+    color: #fff;
+}
+
+h1 {
+    font-size: $title-size;
+    font-weight: $sm-weight;
+    line-height: 1.4;
+    color: #fff;
+}

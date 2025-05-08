@@ -5,76 +5,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/css/styles.css">
   
   <title>Frontend Mentor | Time tracking dashboard</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  Report for
-  Jeremy Robson
+  <div class="dashboard">
 
-  Daily
-  Weekly
-  Monthly
+      <div class="dashboard__profil">
+          <div class="profil_content">
+              <div class="img__profil">
+                  <img src="/images/image-jeremy.png" alt="Jeremy's avatar">
+              </div>
+              <div class="profil__info">
+                  <p>Report for</p>
+                  <h1>Jeremy Robson</h1>
+              </div>
+          </div>
 
-  Work
-  5hrs <!-- daily -->
-  Previous - 7hrs <!-- daily -->
-  32hrs <!-- weekly -->
-  Previous - 36hrs <!-- weekly -->
-  103hrs <!-- monthly -->
-  Previous - 128hrs <!-- monthly -->
+          <div class="dash__info">
+            <a href="#">Daily</a>
+            <p class="light">Weekly</p>
+            <a href="#">Monthly</a>
+          </div>
+      </div>
 
-  Play
-  1hr <!-- daily -->
-  Previous - 2hrs <!-- daily -->
-  10hrs <!-- weekly -->
-  Previous - 8hrs <!-- weekly -->
-  23hrs <!-- monthly -->
-  Previous - 29hrs <!-- monthly -->
 
-  Study
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 7hrs <!-- weekly -->
-  13hrs <!-- monthly -->
-  Previous - 19hrs <!-- monthly -->
+      <div class="card work__card">
+          <div class="content">
+            <header>
+              <p class="light">Work</p>
+              <div class="icon">
+                <i class="ri-more-line"></i>
+              </div>
+            </header>
+            <div class="info__card">
+              <h1>32hrs</h1>
+              <p>Previous - 36hrs</p>
+            </div>
+          </div>
+      </div>
 
-  Exercise
-  1hr <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 5hrs <!-- weekly -->
-  11hrs <!-- monthly -->
-  Previous - 18hrs <!-- monthly -->
+      <div class="card play__card">
+        <div class="content">
+          <header>
+            <p class="light">Play</p>
+            <div class="icon">
+              <i class="ri-more-line"></i>
+            </div>
+          </header>
+          <div class="info__card">
+            <h1>1hr</h1>
+            <p>Previous - 2hrs</p>
+          </div>
+        </div>
+    </div>
 
-  Social
-  1hr <!-- daily -->
-  Previous - 3hrs <!-- daily -->
-  5hrs <!-- weekly -->
-  Previous - 10hrs <!-- weekly -->
-  21hrs <!-- monthly -->
-  Previous - 23hrs <!-- monthly -->
+    <div class="card study__card">
+      <div class="content">
+        <header>
+          <p class="light">Study</p>
+          <div class="icon">
+            <i class="ri-more-line"></i>
+          </div>
+        </header>
+        <div class="info__card">
+          <h1>0hrs</h1>
+          <p>Previous - 1hr</p>
+        </div>
+      </div>
+    </div>
 
-  Self Care
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  2hrs <!-- weekly -->
-  Previous - 2hrs <!-- weekly -->
-  7hrs <!-- monthly -->
-  Previous - 11hrs <!-- monthly -->
+    <div class="card exercise__card">
+      <div class="content">
+        <header>
+          <p class="light">Exercise</p>
+          <div class="icon">
+            <i class="ri-more-line"></i>
+          </div>
+        </header>
+        <div class="info__card">
+          <h1>1hr</h1>
+          <p>Previous - 1hr</p>
+        </div>
+      </div>
+    </div>
 
+    <div class="card social__card">
+      <div class="content">
+        <header>
+          <p class="light">Social</p>
+          <div class="icon">
+            <i class="ri-more-line"></i>
+          </div>
+        </header>
+        <div class="info__card">
+          <h1>1hr</h1>
+          <p>Previous - 3hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card selfCare__card">
+      <div class="content">
+        <header>
+          <p class="light">Self Care</p>
+          <div class="icon">
+            <i class="ri-more-line"></i>
+          </div>
+        </header>
+        <div class="info__card">
+          <h1>0hrs</h1>
+          <p>Previous - 1hr</p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
   
+
+
+
+
+
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://nitiema-allassane-blog.vercel.app/src/pages/about.html">Nitiema Allassane</a>.
   </div>
 </body>
 </html>

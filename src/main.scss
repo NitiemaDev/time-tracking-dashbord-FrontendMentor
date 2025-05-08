@@ -1,0 +1,195 @@
+@use './scss/base' as *;
+@use './scss/variables' as *;
+@use './scss/mixins' as *;
+
+///
+/// 
+/// Continuer a styliser les card du dashboad.
+/// Les bordures
+/// les elements de content
+/// les paddings et margins
+/// la couleur et la taille des polices
+/// les images de fond
+/// les couleurs de fonds
+/// 
+/// l'etat du hover (survol)
+/// 
+/// ..........
+/// A faire demain
+/// 
+/// 
+/// 
+/// 
+/// 
+/// 
+/// 
+/// 
+/// 
+/// 
+
+
+body {
+    @include flex-layout(center, center);
+    flex-direction: column;
+    gap: $md-spacing;
+    min-height: 100vh;
+    background-color: $navy-950;
+    // color: #fff; // <-------------------- enleve apres
+}
+
+.attribution { 
+    font-size: 11px; text-align: center; color: #fff;
+}
+
+.attribution a { 
+    color: #00ec44; 
+}
+
+.dashboard {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: $md-spacing;
+
+    .dashboard__profil {
+        grid-column: 1;
+        grid-row: 1/3;
+        background-color: $navy-900;
+        border-radius: 15px;
+    }
+
+    .dashboard__profil .profil_content {
+        background-color: $purple;
+        padding: $sm-spacing $sm-spacing $big-spacing $sm-spacing;
+        border-radius: 15px;
+    }
+
+    .dashboard__profil .dash__info {
+        padding: $sm-spacing;
+        @include flex-layout(center, left);
+        flex-direction: column;
+        gap: $ssm-spacing;
+    }
+
+    .dashboard__profil .profil_content .img__profil {
+        @include flex-layout(center, center);
+        width: 80px;
+        height: 80px;
+        overflow: hidden;
+        border-radius: 50%;
+        background: #fff;
+        margin-bottom: $lg-spacing;
+        
+    }
+
+    .dashboard__profil .profil_content .img__profil img {
+        width: 90%;
+        height: 90%;
+        object-fit: cover;
+    }
+
+    .card {
+        @include flex-layout(end, baseline);
+        flex-direction: column;
+        border-radius: 15px;
+        background-repeat: no-repeat;
+        background-position-x: 90%;
+    }
+
+    .work__card {
+        background-color: $orange;
+        background-image: url('/images/icon-work.svg');
+    }
+
+    .play__card {
+        background-color: $blue;
+        background-image: url('/images/icon-play.svg');
+    }
+
+    .study__card {
+        background-color: $pink;
+        background-image: url('/images/icon-study.svg');
+    }
+
+    .exercise__card {
+        background-color: $green;
+        background-image: url('/images/icon-exercise.svg');
+    }
+
+    .social__card {
+        background-color: $purple-700;
+        background-image: url('/images/icon-social.svg');
+    }
+
+    .selfCare__card {
+        background-color: $yellow;
+        background-image: url('/images/icon-self-care.svg');
+    }
+
+    .card .content {
+        background-color: $navy-900;
+        width: 100%;
+        padding: $sm-spacing;
+        border-radius: 13px;
+        height: 80%;
+        z-index: 10;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .card .content:hover {
+        background-color: $purple-500;
+    }
+
+    .card .content header {
+        @include flex-layout(space-between, center);
+    }
+
+    .card .content header .icon i {
+        color: $navy-200;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .card .content header .icon i:hover {
+        color: #fff;
+    }
+
+    .card .content .info__card {
+        margin-top: $ssm-spacing;
+    }
+    
+}
+
+
+@media screen and (max-width: 1224px) {
+    .dashboard {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 48rem) {
+    body {
+        display: block;
+    }
+
+    .dashboard {
+        max-width: 90%;
+        // display: flex;
+        // flex-direction: column;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    
+    .dashboard .card {
+        height: 260px;
+    }
+
+    .attribution {
+        margin-top: $md-spacing;
+    }
+}
