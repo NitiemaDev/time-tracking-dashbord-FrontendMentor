@@ -12,6 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Young+Serif&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./src/css/styles.css">
+
+  <script src="/src/js/script.js" defer></script>
   
   <title>Frontend Mentor | Time tracking dashboard</title>
 </head>
@@ -31,9 +33,9 @@
           </div>
 
           <div class="dash__info">
-            <a href="#">Daily</a>
-            <p class="light">Weekly</p>
-            <a href="#">Monthly</a>
+            <button class="filter-btn" data-period="daily">Daily</button>
+            <button class="filter-btn active" data-period="weekly">Weekly</button>
+            <button class="filter-btn" data-period="monthly">Monthly</button>
           </div>
       </div>
 
@@ -47,8 +49,8 @@
               </div>
             </header>
             <div class="info__card">
-              <h1>32hrs</h1>
-              <p>Previous - 36hrs</p>
+              <h1 class="current">32hrs</h1>
+              <p class="previous">Previous - 36hrs</p>
             </div>
           </div>
       </div>
@@ -62,8 +64,8 @@
             </div>
           </header>
           <div class="info__card">
-            <h1>1hr</h1>
-            <p>Previous - 2hrs</p>
+            <h1 class="current">1hr</h1>
+            <p class="previous">Previous - 2hrs</p>
           </div>
         </div>
     </div>
@@ -77,8 +79,8 @@
           </div>
         </header>
         <div class="info__card">
-          <h1>0hrs</h1>
-          <p>Previous - 1hr</p>
+          <h1 class="current">0hrs</h1>
+          <p class="previous">Previous - 1hr</p>
         </div>
       </div>
     </div>
@@ -92,8 +94,8 @@
           </div>
         </header>
         <div class="info__card">
-          <h1>1hr</h1>
-          <p>Previous - 1hr</p>
+          <h1 class="current">1hr</h1>
+          <p class="previous">Previous - 1hr</p>
         </div>
       </div>
     </div>
@@ -107,13 +109,13 @@
           </div>
         </header>
         <div class="info__card">
-          <h1>1hr</h1>
-          <p>Previous - 3hrs</p>
+          <h1 class="current">1hr</h1>
+          <p class="previous">Previous - 3hrs</p>
         </div>
       </div>
     </div>
 
-    <div class="card selfCare__card">
+    <div class="card selfcare__card">
       <div class="content">
         <header>
           <p class="light">Self Care</p>
@@ -122,8 +124,8 @@
           </div>
         </header>
         <div class="info__card">
-          <h1>0hrs</h1>
-          <p>Previous - 1hr</p>
+          <h1 class="current">0hrs</h1>
+          <p class="previous">Previous - 1hr</p>
         </div>
       </div>
     </div>

@@ -5,11 +5,28 @@
   font-family: "Rubik";
 }
 
-p, a {
+p, a, button {
   font-size: 18px;
   font-weight: 300;
   line-height: 1.6;
   color: hsl(236, 100%, 87%);
+}
+
+button {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+button.active, .light {
+  font-weight: 400;
+  color: #fff;
+}
+
+button:hover {
+  color: #fff;
 }
 
 a {
@@ -17,11 +34,6 @@ a {
 }
 
 a:hover {
-  color: #fff;
-}
-
-.light {
-  font-weight: 500;
   color: #fff;
 }
 
@@ -124,7 +136,7 @@ body {
   background-color: hsl(264, 64%, 52%);
   background-image: url("/images/icon-social.svg");
 }
-.dashboard .selfCare__card {
+.dashboard .selfcare__card {
   background-color: hsl(43, 84%, 65%);
   background-image: url("/images/icon-self-care.svg");
 }

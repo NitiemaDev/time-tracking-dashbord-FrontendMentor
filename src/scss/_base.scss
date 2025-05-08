@@ -7,11 +7,28 @@
     font-family: $rubik-font;
 }
 
-p, a {
+p, a, button {
     font-size: $paragraph-size;
     font-weight: $sm-weight;
     line-height: 1.6;
     color: $navy-200;
+}
+
+button {
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+button.active, .light {
+    font-weight: $md-weight;
+    color: #fff;
+}
+
+button:hover {
+    color: #fff;
 }
 
 a {
@@ -19,11 +36,6 @@ a {
 }
 
 a:hover {
-    color: #fff;
-}
-
-.light {
-    font-weight: $big-weight;
     color: #fff;
 }
 
