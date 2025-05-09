@@ -1,112 +1,118 @@
-# Frontend Mentor - Time tracking dashboard solution
+# Frontend Mentor - Time Tracking Dashboard Solution
 
-This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is my solution to the [Time Tracking Dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Table of contents
+## Table of Contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [The Challenge](#the-challenge)
+  - [Screenshots](#screenshots)
   - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+- [My Process](#my-process)
+  - [Built With](#built-with)
+  - [What I Learned](#what-i-learned)
+  - [Continued Development](#continued-development)
+  - [Useful Resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
-### The challenge
+### The Challenge
 
 Users should be able to:
 
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Switch between viewing Daily, Weekly, and Monthly stats
+- View the optimal layout depending on their device's screen size.
+- See hover states for all interactive elements.
+- Switch between viewing daily, weekly, and monthly stats.
 
-### Screenshot
+### Screenshots
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Desktop Screenshot](/screenshots/desktop.png)
+![Mobile - Filter](/screenshots/mobile-f.png)
+![Mobile - Stats 1](/screenshots/mb-s.png)
+![Mobile - Stats 2](/screenshots/mobile.png)
+![Mobile - End](/screenshots/mb-end.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- **Solution URL:** [Frontend Mentor](https://www.frontendmentor.io/solutions/tracking-time-dashboard-with-api-and-promises-VhLmHDASVq)
+- **Live Site URL:** [Live on Vercel](https://time-tracking-dashbord-frontend-mentor.vercel.app/)
 
-## My process
+## My Process
 
-### Built with
+### Built With
 
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Vanilla JavaScript (ES6+)
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+### What I Learned
 
-### What I learned
+This project taught me how to:
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- Fetch data using asynchronous functions and promises.
+- Update the DOM dynamically based on JSON data.
+- Use `data-*` attributes and the `dataset` API.
+- Write modular and readable JavaScript code.
 
-To see how you can add code snippets, see below:
+Here’s a core part of the logic I implemented:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+const getData = async () => {
+  try {
+    const response = await fetch('/data.json');
+    if (!response.ok) throw new Error("Erreur lors du chargement des données");
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
+const updateUserInterface = async (period = "weekly") => {
+  const data = await getData();
+  if (!data) return;
+
+  data.forEach(activity => {
+    const activityName = activity.title.toLowerCase().replace(" ", "");
+    const card = document.querySelector(`.${activityName}__card`);
+
+    if (card) {
+      const currentTag = card.querySelector(".current");
+      const previousTag = card.querySelector(".previous");
+
+      currentTag.textContent = `${activity.timeframes[period].current}hrs`;
+      previousTag.textContent = `Previous - ${activity.timeframes[period].previous}hrs`;
+    }
+  });
+};
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+### Continued Development
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+In the future, I’d like to:
 
-### Continued development
+- Add animations and transitions between data updates.
+- Improve accessibility (ARIA labels, keyboard navigation).
+- Implement data filtering and sorting.
+- Store user preferences using `localStorage`.
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+### Useful Resources
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- [MDN Web Docs - Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [JavaScript.info - Async/await](https://javascript.info/async-await)
+- [Frontend Mentor Slack Community](https://www.frontendmentor.io/slack)
 
-### Useful resources
+### Author
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- **Website** – [Nitiema Allassane](https://nitiema-allassane-blog.vercel.app/index.html)
+- **Frontend Mentor** – [@NitiemaDev](https://www.frontendmentor.io/profile/NitiemaDev)
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+### Acknowledgments
 
-## Author
+Thanks to my mentor and coding friend **ChatGPT** for the continuous support and encouragement during this project. Also, big thanks to the **Frontend Mentor** community for the feedback and inspiration.
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
